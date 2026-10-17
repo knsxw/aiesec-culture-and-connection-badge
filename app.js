@@ -7,7 +7,7 @@ let portrait = null;
 let accent = '#ffad42';
 let artReady = false;
 let uploadSequence = 0;
-const fields = ['name', 'role', 'entity', 'pass', 'headline', 'tag', 'zoom', 'position-x', 'position-y'];
+const fields = ['name', 'role', 'pass', 'headline', 'tag', 'zoom', 'position-x', 'position-y'];
 function text(value, x, y, size, color = '#fff6ec', weight = '500', maxWidth = 930, family = 'Space Grotesk') {
   ctx.fillStyle = color;
   ctx.textAlign = 'center';
@@ -53,10 +53,10 @@ function render() {
   bat(190,980,.72);bat(885,1290,.65);
   text($('headline').value.toUpperCase(),540,800,31,accent,'600');
   text($('name').value.trim() || 'Your name',540,1480,78,'#fff7ed','700',930);
-  const details=[$('role').value.trim(),$('entity').value.trim()].filter(Boolean);
-  details.forEach((line,index)=>text(line,540,1562+index*47,32,'#cdb8dc','400'));
+  const role=$('role').value.trim();
+  if(role) text(role,540,1570,34,'#cdb8dc','400');
   const pass=$('pass').value.toUpperCase();ctx.font='600 24px "DM Sans",sans-serif';const pw=Math.min(850,Math.max(260,ctx.measureText(pass).width+84));
-  rounded(540-pw/2,1670,pw,62,31,accent);text(pass,540,1702,24,'#24113c','700',pw-40);
+  rounded(540-pw/2,role ? 1650 : 1590,pw,62,31,accent);text(pass,540,role ? 1682 : 1622,24,'#24113c','700',pw-40);
   ctx.strokeStyle='#76558a';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(90,1795);ctx.lineTo(990,1795);ctx.stroke();
   text($('tag').value.trim(),540,1847,27,'#cdb8dc','400',930);
   canvas.setAttribute('aria-label',`Story badge for ${$('name').value.trim()||'your name'}, ${$('pass').value}, AIESEC Culture & Connection Night`);
