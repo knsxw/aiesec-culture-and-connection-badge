@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#160d25"><meta name="description" content="Make your personal AIESEC Culture & Connection Night Halloween story badge. Add your photo, make it yours, and share the spirit."><title>Culture & Connection Night · Badge Studio</title><link rel="stylesheet" href="styles.css"><script src="app.js" defer></script></head>
+<body>
+<header class="site-header"><a href="#" class="brand">AIESEC<span>Culture & Connection Night</span></a><span class="edition"><i></i> THE HALLOWEEN EDITION</span></header>
+<main>
+<section class="intro"><div class="eyebrow">A LITTLE SPOOKY. A LOT OF CONNECTION.</div><h1>New faces.<br>Unforgettable <em>spirits.</em></h1><p>A night of cultures, costumes, and connections.<br>Make your badge. Bring your spirit. Be part of it.</p><div class="steps"><span><b>01</b> Add your photo</span><span><b>02</b> Make it yours</span><span><b>03</b> Share the night</span></div></section>
+<div class="studio">
+<section class="editor" aria-label="Customize your badge">
+<div class="section-title"><span class="number">01</span><h2>Your photo</h2><span class="small">THE FACE BEHIND THE COSTUME</span></div>
+<input id="photo" type="file" accept="image/jpeg,image/png,image/webp,image/avif" hidden>
+<button class="upload" id="upload"><span class="upload-icon">↥</span><span><strong>Choose your photo</strong><small>JPG, PNG, WebP or AVIF · up to 15 MB</small></span><span class="plus">+</span></button>
+<div class="photo-meta"><span id="photo-status">A good portrait works like magic.</span><button id="remove" class="text-button" hidden>Remove</button></div>
+<fieldset id="photo-controls" disabled><div class="range-row"><label for="zoom">Zoom</label><input id="zoom" type="range" min="1" max="3" step="0.01" value="1"><output id="zoom-value">100%</output></div><div class="position-controls"><label>Left / right<input aria-label="Horizontal photo position" id="position-x" type="range" min="-1" max="1" step="0.01" value="0"></label><label>Up / down<input aria-label="Vertical photo position" id="position-y" type="range" min="-1" max="1" step="0.01" value="0"></label></div></fieldset>
+<div class="section-title"><span class="number">02</span><h2>Your details</h2></div>
+<label for="name">Full name <span>*</span></label><input id="name" placeholder="Your name, in the spotlight" maxlength="48" autocomplete="name">
+<div class="field-grid"><div><label for="role">Role / title</label><input id="role" placeholder="e.g. Exchange participant" maxlength="48"></div><div><label for="entity">Entity / country</label><input id="entity" placeholder="e.g. AIESEC in Thailand" maxlength="48"></div></div>
+<div class="section-title"><span class="number">03</span><h2>Your kind of magic</h2></div>
+<div class="field-grid"><div><label for="pass">Pass type</label><select id="pass"><option>Attendee</option><option>AIESEC Member</option><option>Exchange Participant</option><option>Alumni</option><option>Organising Team</option><option>Partner</option><option>Guest</option></select></div><div><label for="headline">Your headline</label><select id="headline"><option>I'll be there</option><option>I'm attending</option><option>See you at</option><option>I'm hosting</option><option>Let's connect at</option></select></div></div>
+<label>Pick your glow</label><div class="swatches" role="group" aria-label="Badge accent color"><button class="swatch selected" data-color="#ffad42" aria-label="Pumpkin orange" aria-pressed="true" style="--swatch:#ffad42">✓</button><button class="swatch" data-color="#be9bff" aria-label="Moonlit lavender" aria-pressed="false" style="--swatch:#be9bff"></button><button class="swatch" data-color="#bde993" aria-label="Witch green" aria-pressed="false" style="--swatch:#bde993"></button><button class="swatch" data-color="#ff95b6" aria-label="Mystic pink" aria-pressed="false" style="--swatch:#ff95b6"></button><span id="color-name">Pumpkin orange</span></div>
+<label for="tag">Bottom line</label><input id="tag" value="#CultureAndConnectionNight" maxlength="55">
+<button id="download" class="download">Download your badge <span>↓</span></button><p class="export-note">INSTAGRAM STORY · 1080 × 1920 · PNG</p><p id="feedback" role="status" aria-live="polite"></p>
+</section>
+<section class="preview-area" aria-label="Badge preview"><div class="preview-label"><span><i></i> LIVE PREVIEW</span><span>MADE FOR YOUR STORY ↗</span></div><div class="canvas-wrap"><canvas id="badge" width="1080" height="1920" role="img" aria-label="Live preview of your personalized Halloween story badge"></canvas></div><p class="preview-note">Your next connection starts with a hello.</p><div class="caption-card"><div><h2>Spread the spirit</h2><button id="copy" class="text-button">Copy caption ↗</button></div><p id="caption">New faces, unforgettable spirits. 👻 I'll be at AIESEC Culture & Connection Night! Who's joining me? #CultureAndConnectionNight #AIESEC</p></div><p class="privacy"><span>♧</span> Your photo stays on your device. Always.</p></section>
+</div>
+</main><footer><span>AIESEC <b>×</b> CULTURE & CONNECTION NIGHT</span><span>Different cultures. One unforgettable night. ✦</span></footer>
+</body></html>
